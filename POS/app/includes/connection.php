@@ -2,7 +2,7 @@
 			$servername = "localhost";
 			$username = "root";
 			$password = "";
-			$dbname = "pos";
+			$dbname = "pos_dexdevs";
 
 			// Create connection
 			$conn = new mysqli($servername, $username, $password, $dbname);
