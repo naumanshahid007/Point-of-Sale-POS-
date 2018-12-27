@@ -1,46 +1,13 @@
-	<?php include "header.php";?>
-	<!-- page content -->
-	        <div class="right_col" role="main">
-	              
-	              <div class="row">
-
-	                <!-- start of pannel -->
-	                <div class="col-md-12">
-	                  <div class="x_panel">
-	                    <div class="x_title">
-	                      <h2>Admin<small>List</small></h2>
-	                      <ul class="nav navbar-right panel_toolbox">
-	                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-	                        </li>
-	                        <li class="dropdown">
-	                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-	                          <ul class="dropdown-menu" role="menu">
-	                            <li><a href="#">Settings 1</a>
-	                            </li>
-	                            <li><a href="#">Settings 2</a>
-	                            </li>
-	                          </ul>
-	                        </li>
-	                        <li><a class="close-link"><i class="fa fa-close"></i></a>
-	                        </li>
-	                      </ul>
-	                      <div class="clearfix"></div>
-	                    </div>
-	                    <div class="x_content">
-	                      <div class="row">
-	                        <div class="col-sm-12">
-	                          <div class="temperature">
-	                  			<h1>DEXDEVS</h1>
-	                          </div>
-	                        </div>
-	                      </div>
-	                     </div>
-	                  </div>
-	                </div>
-	                <!-- end of pannel -->
-	              </div>
-	            
-	          </div>
-	        
-	        <!-- /page content -->
-	<?php include "footer.php";?>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="refresh" content="0;url=pages/index.html">
+<title>SB Admin 2</title>
+<script language="javascript">
+    window.location.href = "app/index/index.php"
+</script>
+</head>
+<body>
+<!-- Go to <a href="pages/index.php">/pages/index.html</a> -->
+</body>
+</html>

@@ -1,3 +1,6 @@
+   <?php include"../includes/connection.php"; ?>
+  <?php include"../includes/session.php"; ?>
+    
     <!DOCTYPE html>
     <html lang="en">
       <head>
@@ -6,7 +9,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    	<link rel="icon" href="images/favicon.ico" type="image/ico" />
+    	
 
         <title>Point of sale </title>
 
@@ -27,7 +30,7 @@
         <link href="../../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
         <!-- Custom Theme Style -->
-        <link href="build/css/custom.min.css" rel="stylesheet">
+        <link href="../../build/css/custom.min.css" rel="stylesheet">
       </head>
 
       <body class="nav-md">
@@ -36,7 +39,7 @@
             <div class="col-md-3 left_col">
               <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                  <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+                  <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Point of Sale</span></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -44,11 +47,19 @@
                 <!-- menu profile quick info -->
                 <div class="profile clearfix">
                   <div class="profile_pic">
-                    <img src="production/images/img.jpg" alt="..." class="img-circle profile_img">
+                    <?php  
+                      $stmt=$conn->prepare("SELECT * FROM users WHERE user_name='$user_info'");
+                      $stmt->execute();
+                      $result= $stmt->get_result();
+                      $result->num_rows;
+                      $row=$result->fetch_array();
+
+                    ?>
+                    <img src="../admin/<?php echo $row['image'] ?>" alt="..." class="img-circle profile_img">
                   </div>
                   <div class="profile_info">
                     <span>Welcome,</span>
-                    <h2>John Doe</h2>
+                    <h2><?php echo $user_info; ?></h2>
                   </div>
                 </div>
                 <!-- /menu profile quick info -->
@@ -75,24 +86,24 @@
                       </li>
                        <li><a><i class="fa fa-user"></i> Admin <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                          <li><a href="form.html">Manage Admin</a></li>
+                          <li><a href="../admin/index_admin.php">Manage Admin</a></li>
                           
                         </ul>
                       </li>
                       <li><a href="#"><i class="fab fa-dochub"></i>Distributor <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                              <li><a href="#">Distributor Record</a></li>
+                              <li><a href="../distributer/index_distributer.php">Distributor Record</a></li>
                         </ul>
                      </li>
                       <li><a><i class="fa fa-users"></i> Customer <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                          <li><a href="form.html">Customer Record</a></li>
+                          <li><a href="../customer/index_customer.php">Customer Record</a></li>
                           
                         </ul>
                       </li>
                       <li><a href="#"><i class="fa fa-product-hunt"></i> Products<span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                          <li><a href="products_record.php">Products Record</a></li>
+                          <li><a href="../products/index_products.php">Products Record</a></li>
                       </ul>
                     </li>
                       <li><a href="#"><i class="fa fa-sign-in"></i> Purchase Invoice <span class="fa fa-chevron-down"></span></a>
@@ -145,20 +156,7 @@
                 <!-- /sidebar menu -->
 
                 <!-- /menu footer buttons -->
-                <div class="sidebar-footer hidden-small">
-                  <a data-toggle="tooltip" data-placement="top" title="Settings">
-                    <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                  </a>
-                  <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                    <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-                  </a>
-                  <a data-toggle="tooltip" data-placement="top" title="Lock">
-                    <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-                  </a>
-                  <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
-                    <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                  </a>
-                </div>
+                
                 <!-- /menu footer buttons -->
               </div>
             </div>
@@ -174,19 +172,13 @@
                   <ul class="nav navbar-nav navbar-right">
                     <li class="">
                       <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        <img src="images/img.jpg" alt="">John Doe
+                        <img src="images/img.jpg" alt=""><?php echo $user_info; ?>
                         <span class=" fa fa-angle-down"></span>
                       </a>
                       <ul class="dropdown-menu dropdown-usermenu pull-right">
                         <li><a href="javascript:;"> Profile</a></li>
-                        <li>
-                          <a href="javascript:;">
-                            <span class="badge bg-red pull-right">50%</span>
-                            <span>Settings</span>
-                          </a>
-                        </li>
-                        <li><a href="javascript:;">Help</a></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                        
+                        <li><a href="../index/logout.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                       </ul>
                     </li>
 

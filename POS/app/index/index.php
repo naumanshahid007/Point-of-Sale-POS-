@@ -1,4 +1,5 @@
 	<?php include "../includes/header.php";?>
+
 	<!-- page content -->
 	        <div class="right_col" role="main">
 	              
@@ -8,7 +9,8 @@
 	                <div class="col-md-12">
 	                  <div class="x_panel">
 	                    <div class="x_title">
-	                      <h2>Admin<small>List</small></h2>
+	                      <h2>Welcome</h2>
+
 	                      <ul class="nav navbar-right panel_toolbox">
 	                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
 	                        </li>
@@ -30,8 +32,14 @@
 	                      <div class="row">
 	                        <div class="col-sm-12">
 	                          <div class="temperature">
-	                  			<h1>Point of Sale </h1>
-	                  			
+	                  			<h1>DEXDEVS</h1>
+	                  			<h2>Welcome to the point of Sale</h2>
+	                  			<p>
+	                  				<!-- <?php //echo $user_info; ?> -->
+	                  				
+
+
+	                  			</p>
 	                          </div>
 	                        </div>
 	                      </div>
